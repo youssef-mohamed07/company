@@ -74,7 +74,7 @@ const dropdownNavs = [
     }
 ]
 
-export default function App() {
+export default function Header() {
 
     const [state, setState] = useState(false)
     const [drapdownState, setDrapdownState] = useState({ isActive: false, idx: null })
@@ -191,12 +191,12 @@ export default function App() {
                             }
                             <div className='flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0'>
                                 <li>
-                                    <a href="/" className="block py-3 text-center text-black hover:text-gray-500 transition border  md:border-none">
+                                    <a href="/login" className="block py-3 text-center text-black hover:text-gray-500 transition border  md:border-none">
                                         Log in
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/" className="block py-3 px-4 font-bold text-center text-yellow-500 bg-black hover:bg-gray-800 active:bg-black transition active:shadow-none  shadow md:inline">
+                                    <a href="/signup" className="block py-3 px-4 font-bold text-center text-yellow-500 bg-black hover:bg-gray-800 active:bg-black transition active:shadow-none  shadow md:inline">
                                         Sign in
                                     </a>
                                 </li>

@@ -1,19 +1,22 @@
-import Hero from "./components/hero";
-import Statistics from "./components/statistics";
-import Testmonials from "./components/testmonials";
-import ContactUS from "./components/contact";
-import Services from "./components/services";
-import Projects from "./components/projects";
 
+import Header from "./components/UI/header";
+import Footer from "./components/UI/footer";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from "./components/auth/Login";
+import SignUp from "./components/auth/SignUp";
 function App() {
   return(
     <>
-      <Hero />
-      <Statistics />
-      <Services />
-      <Projects />
-      <Testmonials />
-      <ContactUS />
+     <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+      <Footer />
+    </Router>
     </>
   )
 }
