@@ -1,3 +1,6 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
 export default function Statistics() {
     const stats = [
         {
@@ -16,46 +19,87 @@ export default function Statistics() {
             data: "30M+",
             title: "Total revenue"
         },
-    ]
+    ];
+
     return (
         <>
-                <span className="relative flex justify-center">
-  <div
-    className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"
-  ></div>
-
-</span>
-
-<br></br>
-        <section className="py-14">
-            <div className="max-w-screen-xl mx-auto px-4 text-black gap-x-12 items-start justify-between lg:flex md:px-8">
-                <div className="sm:hidden lg:block lg:max-w-xl">
-                    <img draggable='false' src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" className="rounded-lg" alt="" />
-                </div>
-                <div className="mt-6 gap-12 sm:mt-0 md:flex lg:block">
-                    <div className="max-w-2xl">
-                        <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                            We do our best to make customers always happy
-                        </h3>
-                        <p className="mt-3 max-w-xl">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.
-                        </p>
+            <motion.span 
+                className="relative flex justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            >
+                <div 
+                    id="statistics"
+                    className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-yellow-500 to-transparent opacity-75"
+                ></div>
+            </motion.span>
+            <section className="py-14 bg-white">
+                <div className="max-w-screen-xl mx-auto px-4 text-black gap-x-12 items-start justify-between lg:flex md:px-8">
+                    <motion.div 
+                        className="sm:hidden lg:block lg:max-w-xl"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <img 
+                            draggable='false' 
+                            src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
+                            className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" 
+                            alt="Happy customers" 
+                        />
+                    </motion.div>
+                    <div className="mt-6 gap-12 sm:mt-0 md:flex lg:block">
+                        <motion.div 
+                            className="max-w-2xl"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                        >
+                            <h3 className="text-white text-3xl font-semibold sm:text-4xl">
+                                We do our best to make customers always happy
+                            </h3>
+                            <p className="mt-3 max-w-xl text-black-400">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.
+                            </p>
+                        </motion.div>
+                        <motion.div 
+                            className="flex-none mt-6 md:mt-0 lg:mt-6"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                        >
+                            <ul className="inline-grid gap-y-8 gap-x-14 grid-cols-2">
+                                {stats.map((item, idx) => (
+                                    <motion.li 
+                                        key={idx} 
+                                        className="text-center"
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    >
+                                        <motion.h4 
+                                            className="text-4xl text-yellow-500 font-semibold"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.5, delay: 0.6 + idx * 0.1 }}
+                                        >
+                                            {item.data}
+                                        </motion.h4>
+                                        <motion.p 
+                                            className="mt-3 font-medium text-black-400"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.5, delay: 0.8 + idx * 0.1 }}
+                                        >
+                                            {item.title}
+                                        </motion.p>
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </motion.div>
                     </div>
-                    <div className="flex-none mt-6 md:mt-0 lg:mt-6">
-                        <ul className="inline-grid gap-y-8 gap-x-14 grid-cols-2">
-                            {
-                                stats.map((item, idx) => (
-                                    <li key={idx} className="">
-                                        <h4 className="text-4xl text-yellow-500 font-semibold">{item.data}</h4>
-                                        <p className="mt-3 font-medium">{item.title}</p>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
         </>
-    )
+    );
 }

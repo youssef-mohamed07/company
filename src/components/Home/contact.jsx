@@ -29,13 +29,15 @@ export default function ContactUS() {
 
     return (
         <>
+        <section id="contact" >
+
             <span className="relative flex justify-center">
                 <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
             </span>
             
             <br></br>
 
-            <main className="py-14">
+            <main  className="py-14">
                 <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
                     <div className="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
                         <div className="max-w-lg space-y-3">
@@ -114,6 +116,8 @@ export default function ContactUS() {
                     </div>
                 </div>
             </main>
+            </section>
+
         </>
     )
 }
