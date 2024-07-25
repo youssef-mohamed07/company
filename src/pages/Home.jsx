@@ -14,6 +14,8 @@ export default function Home() {
     <Services />
     <Projects />
     <Testmonials />
+    <ContactUs/>
+    
     
   
 
