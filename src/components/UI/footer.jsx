@@ -72,7 +72,7 @@ export default function Footer() {
                 <ul className="space-y-4">
                   {item.items.map((el, idx) => (
                     <li key={idx}>
-                      <a href={el.href} className="text-gray-600 hover:text-indigo-600 transition duration-150">{el.name}</a>
+                      <a href={el.href} className="text-gray-600 hover:text-yellow-600 transition duration-150">{el.name}</a>
                     </li>
                   ))}
                 </ul>
