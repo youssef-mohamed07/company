@@ -56,12 +56,10 @@ export default function Statistics() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            <h3 className="text-white text-3xl font-semibold sm:text-4xl">
+                            <h3 className="text-black text-3xl font-semibold sm:text-4xl">
                                 We do our best to make customers always happy
                             </h3>
-                            <p className="mt-3 max-w-xl text-black-400">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.
-                            </p>
+                          
                         </motion.div>
                         <motion.div 
                             className="flex-none mt-6 md:mt-0 lg:mt-6"
